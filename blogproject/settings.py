@@ -28,7 +28,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,7 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "blog",
+    "blog",  # Ensure this is correct
 ]
 
 MIDDLEWARE = [
@@ -117,7 +116,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Ensure this directory exists
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
